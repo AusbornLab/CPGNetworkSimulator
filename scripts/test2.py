@@ -1,4 +1,4 @@
-import CPGNetworkSimulator as nsim
+import CPGNetworkSimulator as cpgnsim
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -12,7 +12,7 @@ duration = 100.0
 init_dur = 20.0
 
 fn = os.path.join(os.path.dirname(__file__),".",filename)
-sim = nsim.CPGNetworkSimulator(fn,["a","b"],(neurons,))
+sim = cpgnsim.CPGNetworkSimulator(fn,["a","b"],(neurons,))
 #sim.setAlpha(alphainit)
 
 time_vec = np.arange(0.0,duration+init_dur,dt)

@@ -38,6 +38,7 @@ PYBIND11_MODULE(CPGNetworkSimulator,m) {
         .def("step", py::overload_cast<double,double>(&CPGNetworkSimulator::step))
         .def("controlled_step", &CPGNetworkSimulator::controlled_step)
         .def("dense_step", &CPGNetworkSimulator::dense_step)
+        .def("integrate_steps", &CPGNetworkSimulator::integrate_steps)
         .def("getAct", &CPGNetworkSimulator::getAct)
         .def("setAlpha", &CPGNetworkSimulator::setAlpha)
         .def("updateVariable", &CPGNetworkSimulator::updateVariable)

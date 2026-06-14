@@ -73,6 +73,7 @@ public:
     void step(double dt, double error);
     void controlled_step(double dt);
     void dense_step(double dt);
+    std::vector<std::vector<double>> integrate_steps(int n_steps, double dt, double error);
     const std::vector<std::vector<double>>& getAct(){return act;};
     const std::vector<std::vector<double>>& getIepsp(){return Iepsp;};
     const std::vector<std::vector<double>>& getIipsp(){return Iipsp;};
