@@ -94,6 +94,16 @@ void CPGNetworkSimulator::step(double dt_,double error){
     
 }
 
+std::vector<std::vector<double>> CPGNetworkSimulator::step_series(int n_steps, double dt_, double error) {
+    std::vector<std::vector<double>> result;
+    result.reserve(n_steps);
+    for (int s = 0; s < n_steps; ++s) {
+        step(dt_, error);
+        result.push_back(act[0]);
+    }
+    return result;
+}
+
 void CPGNetworkSimulator::controlled_step(double dt_){
     dt=dt_;
     integrate_const( controlled_stepper , sys , state , t0 , t0+dt , dt );
